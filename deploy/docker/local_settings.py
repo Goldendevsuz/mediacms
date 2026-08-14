@@ -1,6 +1,6 @@
 import os
 
-FRONTEND_HOST = os.getenv('FRONTEND_HOST', 'http://localhost')
+FRONTEND_HOST = os.getenv('FRONTEND_HOST', 'http://localhost:8080')
 PORTAL_NAME = os.getenv('PORTAL_NAME', 'MediaCMS')
 REDIS_LOCATION = os.getenv('REDIS_LOCATION', 'redis://redis:6379/1')
 
@@ -41,3 +41,4 @@ CELERY_RESULT_BACKEND = BROKER_URL
 MP4HLS_COMMAND = "/home/mediacms.io/bento4/bin/mp4hls"
 
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
+CSRF_TRUSTED_ORIGINS = [FRONTEND_HOST, 'http://127.0.0.1:8080']
